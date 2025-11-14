@@ -104,7 +104,18 @@
 			padding: 6rem 2rem;
 			text-align: center;
 		}
-
+		
+		@media (max-width: 780px) {
+		  .hero {
+			margin-top: 140px;
+			height: 344px;
+			background-image: url(banner2-mob.jpg);
+			padding: 2rem 1rem;
+			font-size: 1rem;
+			background-size: cover; /* Garante que a imagem preencha bem */
+			background-position: center;
+		  }
+		}
 
         .hero h2 {
             font-size: 3rem;
@@ -127,6 +138,19 @@
 			padding: 6rem 2rem;
 			text-align: center;
 			width: 1170px;
+		}
+		
+		@media (max-width: 780px) {
+		  .marias {
+			margin-top: 40px;
+			height: 380px;
+			background-image: url(bannerMarias-mob.png);
+			padding: 2rem 1rem;
+			width: 100%; /* Para ocupar toda a largura da tela */
+			background-size: cover;
+			background-position: center;
+			font-size: 1rem; /* Ajuste tamanho do texto para mobile */
+		  }
 		}
 
 
@@ -199,6 +223,24 @@
             text-align: center;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
+		
+        .president-card-marias {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }		
+		
+		@media (max-width: 780px) {
+		  .president-card-marias {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 0.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+			}
+		}
 
         .president-photo {
 		  width: 150px;
@@ -873,8 +915,8 @@
 		  Preocupar-se com o desenvolvimento integral das mulheres, encorajando e motivando-as a serem parte activa da comunidade de sua igreja local e do Distrito, a se envolverem num ministério local DNI, NNI e JNI, para a edificação do Corpo de Cristo (Igreja)
 		</p>
     </div>
-    <div class="president-card">     
-      <img src="FotoMarias.jpeg" alt="DNI Portugal">		
+    <div class="president-card-marias">     
+      <img src="FotoMarias.jpeg" alt="As Marias">		
     </div>
    </div>
   </section>
@@ -893,8 +935,7 @@
     </div>
     <div class="footer-section">
      <h3>Contato</h3>
-     <p>📧 contato@dniportugal.org</p>
-     <p>📱 +351 XXX XXX XXX</p>
+     <p>📧 dni.nazarenopt@gmail.com</p>
      <p>📍 Lisboa, Portugal</p>
     </div>
    </div>
@@ -1335,6 +1376,3 @@
     </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a03c6d37105be4',t:'MTc2MjM4NjQ0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
-
