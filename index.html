@@ -99,7 +99,7 @@
         .hero {
 			margin-top: 95px;
 			height: 343px;
-			background-image: url(banner.jpg);
+			background-image: url(banner2.jpg);
 			color: white;
 			padding: 6rem 2rem;
 			text-align: center;
@@ -113,6 +113,30 @@
         }
 
         .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+		
+        .marias {
+			margin-top: 95px;
+			height: 343px;
+			background-image: url(bannerMarias.jpg);
+			color: white;
+			padding: 6rem 2rem;
+			text-align: center;
+			width: 1170px;
+		}
+
+
+        .marias h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .marias p {
             font-size: 1.3rem;
             font-weight: 300;
             max-width: 700px;
@@ -535,6 +559,14 @@
                 font-size: 1.1rem;
             }
 
+            .marias h2 {
+                font-size: 2rem;
+            }
+
+            .marias p {
+                font-size: 1.1rem;
+            }
+
             section h2 {
                 font-size: 2rem;
             }
@@ -563,6 +595,7 @@
 			justify-content: center;
 			align-items: center;
 			padding: 20px;
+			
 		  }
 
 		  /* Conteúdo da modal centralizado com largura confortável */
@@ -612,7 +645,7 @@
 			  z-index: 1000;
 			  left: 0;
 			  top: 0;
-			  width: 100vw;
+			  width: 102%;
 			  height: 100vh;
 			  background: rgba(0,0,0,0.5);
 			  padding: 0; /* elimina margens internas desnecessárias */
@@ -622,7 +655,7 @@
 			  background: #fff;
 			  border-radius: 16px;
 			  box-shadow: 0 8px 32px rgba(0,0,0,0.26);
-			  width: 80vw;        /* usa parte maior da tela, ajuste entre 45vw e 60vw */
+			  width: 70%;        /* usa parte maior da tela, ajuste entre 45vw e 60vw */
 			  margin: 0 2vw;      /* margens laterais pequenas */
 			  padding: 20px; /* padding interno confortável, principalmente reduzindo no topo/rodapé */
 			  position: relative;
@@ -657,10 +690,11 @@
     <nav id="main-nav">
 		<a href="#home">Home</a> 
 		<a href="#sobre">Sobre</a> 
-		<a href="#" id="openModalBtn">Lideranças</a> 
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLSdnRMd88QS9Gn7bYWwKFunr3ekC6IP76bgaDkZQVfZOFwdpYQ/viewform" target="_blank">Lideranças</a> 
 		<a href="#materiais">Materiais</a> 
 		<a href="#eventos">Eventos</a> 
 		<a href="#contribua">Contribua</a> 
+		<a href="#marias">As Marias</a> 
 		<a href="#footer-section">Contato</a>
     </nav><button class="menu-toggle" id="menu-toggle">☰</button>
    </div>
@@ -668,7 +702,8 @@
   <section class="hero" id="home">
    <h2 id="hero-title"></h2>
    <p id="hero-subtitle"></p>
-  </section><!-- Sobre -->
+  </section>
+  <!-- Sobre -->
   <section id="sobre">
    <h2 id="about-title">Sobre o DNI Portugal</h2>
    <p>Comprometidos com o discipulado cristão e a formação de líderes</p>
@@ -701,55 +736,14 @@
   </section><!-- Lideranças Locais -->
   <!-- Modal -->
 <div id="liderancasModal" class="modal" style="display:none;">
-  <div class="modal-content" style="background:#fff; padding:20px; margin:40px auto; position:relative; max-width: 50vw;">
+  <div class="modal-content" style="background:#fff; padding:20px; margin:40px auto; position:relative;">
     <span id="closeModalBtn" style="position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold;">&times;</span>
-  <section id="liderancas">
-   <h2>Lideranças Locais</h2>
-   <div class="form-container">
-    <div id="leadership-message"></div>
-    <form id="leadership-form">
-     <div class="form-group"><label for="leader-name">Nome Completo *</label> <input type="text" id="leader-name" required>
-     </div>
-     <div class="form-group"><label for="leader-email">E-mail *</label> <input type="email" id="leader-email" required>
-     </div>
-     <div class="form-group"><label for="leader-phone">Telemóvel *</label> <input type="tel" id="leader-phone" required>
-     </div>
-     <div class="form-group">
-	  <label for="dni-role">Função no DNI*</label>
-	  <select id="dni-role" required>
-		<option value="" disabled selected>Selecione uma função</option>
-		<option value="presidente">Presidente</option>
-		<option value="secretario">Secretário(a)</option>
-		<option value="tesoureiro">Tesoureiro(a)</option>
-		<option value="supervisor">Supervisor(a)</option>
-		<option value="professor">Professor(a)</option>
-	  </select>
-	</div>
-
-     <div class="form-group">
-	  <label for="local">Local *</label>
-	  <select id="local" name="local" required>
-		<option value="" disabled selected>Selecione o local</option>
-		<option value="alcabideche">Igreja do Nazareno - Alcabideche</option>
-		<option value="almada">Igreja do Nazareno - Almada</option>
-		<option value="braga">Igreja do Nazareno - Braga</option>
-		<option value="casal-novo">Igreja do Nazareno - Casal Novo</option>
-		<option value="comunidade-restauracao">Igreja do Nazareno - Comunidade Restauração</option>
-		<option value="costa-do-sol">Igreja do Nazareno - Costa do Sol</option>
-		<option value="lisboa">Igreja do Nazareno - Lisboa</option>
-		<option value="merces">Igreja do Nazareno - Mercês</option>
-		<option value="ponta-delgada">Igreja do Nazareno - Ponta Delgada</option>
-		<option value="porto">Igreja do Nazareno - Porto</option>
-		<option value="povoa-de-santa-iria">Igreja do Nazareno - Póvoa de Santa Iria</option>
-		<option value="queluz">Igreja do Nazareno - Queluz</option>
-		<option value="santa-clara">Igreja do Nazareno - Santa Clara</option>
-	  </select>
-	</div>
-	<button type="submit" class="submit-button" id="leadership-submit">Registar</button>
-    </form>
-   </div>
-  </section>
-  </div></div>
+	  <section id="liderancas">
+	   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnRMd88QS9Gn7bYWwKFunr3ekC6IP76bgaDkZQVfZOFwdpYQ/viewform?embedded=true" 
+	   width="800" height="650" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>    
+	  </section>
+  </div>
+</div>
 	<script>
   const modal = document.getElementById('liderancasModal');
   const closeBtn = document.getElementById('closeModalBtn');
@@ -863,6 +857,27 @@
     Obrigado por ser parte dessa caminhada e por fazer a diferença!
   </p>
 </section>
+
+  <section class="marias" id="marias">
+   <h2 id="marias-title"></h2>
+   <p id="marias-subtitle"></p>
+  </section>
+  <section id="sobre_marias">
+   <h2 id="about-title">Ministérios das Mulheres “AS MARIAS”</h2>
+   <div class="about-content">
+    <div>
+     <p style="text-align: left; font-size: 1.1rem; line-height: 1.8; color: #555;">
+	 Assim como as Marias foram activas no ministério de Jesus e seus nomes ficaram conhecidos como as que estiveram com Ele até ao fim e foram as primeiras a testemunhar do milagre da ressurreição, queremos ser de impacto na Península Ibérica, através das nossas vidas e ser agentes na propagação do amor de Deus.
+	</p>
+     <p style="text-align: left; font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 1rem;">
+		  Preocupar-se com o desenvolvimento integral das mulheres, encorajando e motivando-as a serem parte activa da comunidade de sua igreja local e do Distrito, a se envolverem num ministério local DNI, NNI e JNI, para a edificação do Corpo de Cristo (Igreja)
+		</p>
+    </div>
+    <div class="president-card">     
+      <img src="FotoMarias.jpeg" alt="DNI Portugal">		
+    </div>
+   </div>
+  </section>
   <footer>
    <div class="footer-content" >
     <div id="footer-section" class="footer-section">
