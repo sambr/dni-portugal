@@ -118,6 +118,7 @@
 			font-size: 1rem;
 			background-size: cover;
 			background-position: center;
+			transition: background-image 0.8s ease-in-out;
 		  }
 		}
 
@@ -952,55 +953,71 @@
   </footer>
   <script>	  
 	  const hero = document.querySelector('.hero');
-	  const images = [
-		'banner2.jpg',
-		'banner3.jpg'
-	  ];
-
-	  let index = 0;
-	  let timer = null;
-	  const delay = 5000;
-
-	  function changeImage() {
-		hero.style.backgroundImage = `url(${images[index]})`;
-		index = (index + 1) % images.length;
-	  }
-
-	  function startCarousel() {
+	  const desktopImages = [
+		  'banner2.jpg',
+		  'banner3.jpg'
+		];
+		
+		const mobileImages = [
+		  'banner2-mob.png'
+		];
+		
+		let index = 0;
+		let timer = null;
+		const delay = 5000;
+		
+		function isMobile() {
+		  return window.matchMedia('(max-width: 780px)').matches;
+		}
+		
+		function currentImages() {
+		  return isMobile() ? mobileImages : desktopImages;
+		}
+		
+		function changeImage() {
+		  const images = currentImages();
+		  hero.style.backgroundImage = `url(${images[index]})`;
+		  index = (index + 1) % images.length;
+		}
+		
+		function startCarousel() {
 		  removeClickBehavior();
 		  timer = setInterval(changeImage, delay);
 		}
-
+		
 		function stopCarousel() {
 		  if (timer) {
-			clearInterval(timer);
-			timer = null;
+		    clearInterval(timer);
+		    timer = null;
 		  }
-
 		  addClickBehavior();
 		}
-
+		
 		function addClickBehavior() {
 		  hero.style.cursor = 'pointer';
-
 		  hero.addEventListener('click', goToEventos);
 		}
-
+		
 		function removeClickBehavior() {
 		  hero.style.cursor = 'default';
-
 		  hero.removeEventListener('click', goToEventos);
 		}
-
+		
 		function goToEventos() {
 		  document
-			.getElementById('eventos')
-			?.scrollIntoView({ behavior: 'smooth' });
+		    .getElementById('eventos')
+		    ?.scrollIntoView({ behavior: 'smooth' });
 		}
-
-	  // init
-	  changeImage();
-	  startCarousel();
+		
+		// inicialização
+		changeImage();
+		startCarousel();
+		
+		// se mudar o tamanho da tela, reajusta imagem
+		window.addEventListener('resize', () => {
+		  index = 0;
+		  changeImage();
+		});
 
 	  // pausa no hover (desktop)
 	  hero.addEventListener('mouseenter', stopCarousel);
@@ -1437,6 +1454,7 @@
     </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a03c6d37105be4',t:'MTc2MjM4NjQ0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
