@@ -106,6 +106,7 @@
 			color: white;
 			padding: 6rem 2rem;
 			text-align: center;
+			transition: background-image 0.8s ease-in-out;
 		}
 		
 		@media (max-width: 780px) {
@@ -115,7 +116,7 @@
 			background-image: url(banner2-mob.png);
 			padding: 2rem 1rem;
 			font-size: 1rem;
-			background-size: cover; /* Garante que a imagem preencha bem */
+			background-size: cover;
 			background-position: center;
 		  }
 		}
@@ -409,6 +410,7 @@
             border-radius: 10px;
             padding: 2rem;
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+			text-align: center;
         }
 
         .event-date {
@@ -850,17 +852,16 @@
    <h2>Eventos e Conferências</h2>
    <p>Participe dos nossos encontros e conferências</p>
    <div class="events-grid">
-    <div class="event-card"><span class="event-date">15-17 Junho 2024</span>
-     <h3>Conferência Nacional DNI</h3>
-     <p>Três dias de ensino, adoração e comunhão. Local: Lisboa</p><button class="register-button" onclick="registerEvent('Conferência Nacional DNI')">Inscrever-se</button>
+    <div class="event-card"><span class="event-date">14 Fevereiro 2026 - 16h até 18h</span>
+     <h3>Workshop Online - Do Rótulo à Relação</h3>
+     <p>O despertar da igreja sobre o Autismo.
+	 <br>Inclusão sobre o espectro Autista.<br>
+	 Como facilitar o ensino?<br>
+	 Daniela Noronha - Especialista em neuro desenvolvimento.</p><button class="register-button" onclick="registerEvent('Retiro de Líderes')">Inscrever-se</button>
     </div>
-    <div class="event-card"><span class="event-date">22 Julho 2024</span>
-     <h3>Retiro de Líderes</h3>
-     <p>Capacitação e renovação para lideranças locais. Local: Porto</p><button class="register-button" onclick="registerEvent('Retiro de Líderes')">Inscrever-se</button>
-    </div>
-    <div class="event-card"><span class="event-date">10 Setembro 2024</span>
-     <h3>Seminário de Discipulado</h3>
-     <p>Workshop prático sobre métodos de discipulado. Local: Coimbra</p><button class="register-button" onclick="registerEvent('Seminário de Discipulado')">Inscrever-se</button>
+    <div class="event-card"><span class="event-date">25 Abril 2026</span>
+     <h3>Simpósio DNI</h3>
+     <p>Discipulado Intencional</p><button class="register-button" onclick="registerEvent('Seminário de Discipulado')">Inscrever-se</button>
     </div>
    </div>
   </section><!-- Testemunhos -->
@@ -949,7 +950,61 @@
     <p id="footer-text">© 2024 DNI Portugal - Todos os direitos reservados</p>
    </div>
   </footer>
-  <script>
+  <script>	  
+	  const hero = document.querySelector('.hero');
+	  const images = [
+		'banner2.jpg',
+		'banner3.jpg'
+	  ];
+
+	  let index = 0;
+	  let timer = null;
+	  const delay = 5000;
+
+	  function changeImage() {
+		hero.style.backgroundImage = `url(${images[index]})`;
+		index = (index + 1) % images.length;
+	  }
+
+	  function startCarousel() {
+		  removeClickBehavior();
+		  timer = setInterval(changeImage, delay);
+		}
+
+		function stopCarousel() {
+		  if (timer) {
+			clearInterval(timer);
+			timer = null;
+		  }
+
+		  addClickBehavior();
+		}
+
+		function addClickBehavior() {
+		  hero.style.cursor = 'pointer';
+
+		  hero.addEventListener('click', goToEventos);
+		}
+
+		function removeClickBehavior() {
+		  hero.style.cursor = 'default';
+
+		  hero.removeEventListener('click', goToEventos);
+		}
+
+		function goToEventos() {
+		  document
+			.getElementById('eventos')
+			?.scrollIntoView({ behavior: 'smooth' });
+		}
+
+	  // init
+	  changeImage();
+	  startCarousel();
+
+	  // pausa no hover (desktop)
+	  hero.addEventListener('mouseenter', stopCarousel);
+	  hero.addEventListener('mouseleave', startCarousel);
         const defaultConfig = {
             site_title: "DNI Portugal",
             hero_title: "Discipulado Nazareno Internacional",
@@ -1382,6 +1437,7 @@
     </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a03c6d37105be4',t:'MTc2MjM4NjQ0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
