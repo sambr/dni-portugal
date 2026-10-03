@@ -651,6 +651,53 @@
 			  display: block;
 			  max-height: 60px;       /* previne que ultrapasse o container */
 			}
+
+        /* Congresso As Marias + carrossel de fotos */
+        .marias-evento {
+            margin-top: 3rem;
+        }
+
+        .marias-texto {
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .marquee {
+            overflow: hidden;
+            margin: 2rem calc(50% - 50vw) 0;
+            width: 100vw;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 60s linear infinite;
+        }
+
+        .marquee-track img {
+            height: 240px;
+            width: auto;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .marquee:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+            to { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 780px) {
+            .marquee-track img { height: 160px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+        }
     </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
@@ -837,8 +884,26 @@
       <img src="FotoMarias.jpeg" alt="As Marias">		
     </div>
    </div>
+   <div class="marias-evento">
+    <div class="event-card" style="margin: 0 auto 2rem; max-width: 420px;">
+     <span class="event-date">26 a 28 Junho 2026</span>
+     <h3>Congresso Ibérico de Mulheres</h3>
+     <p>Ministério “As Marias” - Portugal</p>
+    </div>
+    <p class="marias-texto">O Congresso Ibérico de Mulheres realizado pelo Ministério “As Marias” ocorreu nos dias 26 a 28 de Junho em Portugal e contou com cerca de 120 mulheres de várias nações reunidas com um único propósito: adorar o nome de Jesus.</p>
+    <p class="marias-texto">O Senhor nos visitou de maneira tão especial nesses dias, e cada palavra tocou profundamente os nossos corações. Foram dias de comunhão, renovação e de lembrar o quanto somos privilegiadas por fazer parte daquilo que Deus está fazendo.</p>
+    <p class="marias-texto">Momentos como esse tornam a caminhada mais leve e nos lembram de que fomos chamadas por Ele e que tudo o que fazemos é para Ele!</p>
+    <div class="marquee" aria-label="Fotos do Congresso Ibérico de Mulheres">
+     <div class="marquee-track">
+      <img src="marias/congresso-2026/carrossel.jpg" alt="Fotos do Congresso Ibérico de Mulheres" width="2688" height="480" loading="lazy">
+      <img src="marias/congresso-2026/carrossel.jpg" alt="" aria-hidden="true" width="2688" height="480" loading="lazy">
+      <img src="marias/congresso-2026/carrossel.jpg" alt="" aria-hidden="true" width="2688" height="480" loading="lazy">
+      <img src="marias/congresso-2026/carrossel.jpg" alt="" aria-hidden="true" width="2688" height="480" loading="lazy">
+     </div>
+    </div>
+   </div>
   </section>
-  <footer>
+  <footer>  <footer>
    <div class="footer-content" >
     <div id="footer-section" class="footer-section">
      <h3>DNI Portugal</h3>
