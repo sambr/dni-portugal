@@ -400,12 +400,14 @@
 
         /* Events Calendar */
         .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
         }
 
         .event-card {
+            flex: 0 1 380px;
             background: white;
             border-left: 5px solid #3498db;
             border-radius: 10px;
@@ -447,12 +449,14 @@
 
         /* Testimonials */
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
         }
 
         .testimonial-card {
+            flex: 0 1 340px;
             background: #f8f9fa;
             padding: 2rem;
             border-radius: 15px;
