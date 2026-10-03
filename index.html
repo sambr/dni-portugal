@@ -1,4 +1,4 @@
-ra<!doctype html>
+<!doctype html>
 <html lang="pt-PT">
  <head>
   <meta charset="UTF-8">
@@ -635,86 +635,6 @@ ra<!doctype html>
             }
         }
 		
-		.modal {
-			display: none;
-			position: fixed; /* fixa na tela */
-			top: 0; left: 0; right: 0; bottom: 0;
-			background-color: rgba(0, 0, 0, 0.5); /* cinza escuro translucido */
-			z-index: 1000; /* na frente de outros elementos */
-			overflow: auto; /* scroll se necessário */
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 20px;
-			
-		  }
-
-		  /* Conteúdo da modal centralizado com largura confortável */
-		  .modal-content {
-			background: #fff;
-			padding: 20px;
-			border-radius: 6px;
-			box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-			position: relative;
-		  }
-
-		  /* Botão fechar no canto */
-		  #closeModalBtn {
-			position: absolute;
-			top: 10px;
-			right: 15px;
-			cursor: pointer;
-			font-weight: bold;
-			font-size: 24px;
-			line-height: 24px;
-		  }
-		  
-		  .form-group {
-			  display: flex;
-			  align-items: center;
-			  margin-bottom: 15px;
-			  gap: 10px; /* Espaço entre label e campo */
-			}
-
-			.form-group label {
-			  flex: 0 0 150px; /* largura fixa para os labels, ajuste conforme necessidade */
-			  font-weight: 600;
-			}
-
-			.form-group input,
-			.form-group select {
-			  flex: 1; /* campos preenchendo o espaço restante */
-			  padding: 6px 8px;
-			  font-size: 1rem;
-			}
-			
-			.modal {
-			  display: flex;
-			  justify-content: center;
-			  align-items: center;
-			  position: fixed;
-			  z-index: 1000;
-			  left: 0;
-			  top: 0;
-			  width: 102%;
-			  height: 100vh;
-			  background: rgba(0,0,0,0.5);
-			  padding: 0; /* elimina margens internas desnecessárias */
-			}
-
-			.modal-content {
-			  background: #fff;
-			  border-radius: 16px;
-			  box-shadow: 0 8px 32px rgba(0,0,0,0.26);
-			  width: 70%;        /* usa parte maior da tela, ajuste entre 45vw e 60vw */
-			  margin: 0 2vw;      /* margens laterais pequenas */
-			  padding: 20px; /* padding interno confortável, principalmente reduzindo no topo/rodapé */
-			  position: relative;
-			  display: flex;
-			  flex-direction: column;
-			  align-items: stretch;
-			}
-			
 			.logo {
 			  height: 50px;           /* defina a altura máxima desejada */
 			  display: flex;
@@ -785,35 +705,6 @@ ra<!doctype html>
     </div>
    </div>
   </section><!-- Lideranças Locais -->
-  <!-- Modal -->
-<div id="liderancasModal" class="modal" style="display:none;">
-  <div class="modal-content" style="background:#fff; padding:20px; margin:40px auto; position:relative;">
-    <span id="closeModalBtn" style="position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold;">&times;</span>
-	  <section id="liderancas">
-	   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdnRMd88QS9Gn7bYWwKFunr3ekC6IP76bgaDkZQVfZOFwdpYQ/viewform?embedded=true" 
-	   width="800" height="650" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>    
-	  </section>
-  </div>
-</div>
-	<script>
-  const modal = document.getElementById('liderancasModal');
-  const closeBtn = document.getElementById('closeModalBtn');
-  const openBtn = document.getElementById('openModalBtn'); // supondo que tenha um botão externo para abrir
-
-  openBtn.onclick = () => {
-    modal.style.display = 'flex'; // display flex para alinhar centralização
-  };
-  closeBtn.onclick = () => {
-    modal.style.display = 'none';
-  };
-  window.onclick = event => {
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
-  };
-</script>
-  
-  
   <!-- Materiais de Ensino -->
   <section id="materiais">
   <h2>Materiais de Ensino</h2>
@@ -928,7 +819,7 @@ ra<!doctype html>
    <p id="marias-subtitle"></p>
   </section>
   <section id="sobre_marias">
-   <h2 id="about-title">Ministérios das Mulheres “AS MARIAS”</h2>
+   <h2 id="about-marias-title">Ministérios das Mulheres “AS MARIAS”</h2>
    <div class="about-content">
     <div>
      <p style="text-align: left; font-size: 1.1rem; line-height: 1.8; color: #555;">
@@ -954,7 +845,7 @@ ra<!doctype html>
      <h3>Links Rápidos</h3><a href="#sobre">Sobre Nós</a> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnRMd88QS9Gn7bYWwKFunr3ekC6IP76bgaDkZQVfZOFwdpYQ/viewform" target="_blank">Lideranças</a>  <a href="#materiais">Materiais</a> <a href="#eventos">Eventos</a>
     </div>
     <div class="footer-section">
-     <h3>Recursos</h3><a href="#materiais">Materiais</a> <a href="#testemunhos">Testemunhos</a> <a href="#contribua">Contribua</a> <a href="#contato">Contato</a>
+     <h3>Recursos</h3><a href="#materiais">Materiais</a> <a href="#testemunhos">Testemunhos</a> <a href="#contribua">Contribua</a> <a href="#footer-section">Contato</a>
     </div>
     <div class="footer-section">
      <h3>Contato</h3>
@@ -963,7 +854,7 @@ ra<!doctype html>
     </div>
    </div>
    <div class="footer-bottom">
-    <p id="footer-text">© 2024 DNI Portugal - Todos os direitos reservados</p>
+    <p id="footer-text">© 2026 DNI Portugal - Todos os direitos reservados</p>
    </div>
   </footer>
   <script>	  
@@ -1042,7 +933,7 @@ ra<!doctype html>
             hero_subtitle: "Formando discípulos de Cristo em Portugal",
             about_title: "Sobre o DNI Portugal",
             president_name: "Ernestro Egi Welte",
-            footer_text: "© 2024 DNI Portugal - Todos os direitos reservados",
+            footer_text: "© 2026 DNI Portugal - Todos os direitos reservados",
             background_color: "#ffffff",
             primary_color: "#3498db",
             accent_color: "#f39c12",
@@ -1118,11 +1009,6 @@ ra<!doctype html>
                         if (footerText) {
                             footerText.textContent = config.footer_text || defaultConfig.footer_text;
                             footerText.style.fontSize = `${baseSize * 0.9}px`;
-                        }
-
-                        const hero = document.querySelector('.hero');
-                        if (hero) {
-                            hero.style.background = `linear-gradient(135deg, ${config.primary_color || defaultConfig.primary_color} 0%, ${config.secondary_color || defaultConfig.secondary_color} 100%)`;
                         }
 
                         const ctaButtons = document.querySelectorAll('.cta-button, .download-button, .register-button, .newsletter-form button');
@@ -1240,229 +1126,6 @@ ra<!doctype html>
                 }
             });
         });
-
-        // Leadership Form
-        document.getElementById('leadership-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!window.dataSdk) return;
-
-            if (currentRecordCount >= 999) {
-                showMessage('leadership-message', 'Limite de 999 cadastros atingido. Por favor, entre em contato conosco.', 'error');
-                return;
-            }
-
-            const submitBtn = document.getElementById('leadership-submit');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            const formData = {
-                id: Date.now().toString(),
-                type: 'leadership',
-                name: document.getElementById('leader-name').value,
-                email: document.getElementById('leader-email').value,
-                phone: document.getElementById('leader-phone').value,
-                church: document.getElementById('leader-church').value,
-                city: document.getElementById('leader-city').value,
-                message: document.getElementById('leader-message').value,
-                created_at: new Date().toISOString()
-            };
-
-            const result = await window.dataSdk.create(formData);
-
-            if (result.isOk) {
-                showMessage('leadership-message', 'Cadastro realizado com sucesso! Entraremos em contato em breve.', 'success');
-                document.getElementById('leadership-form').reset();
-            } else {
-                showMessage('leadership-message', 'Erro ao enviar cadastro. Tente novamente.', 'error');
-            }
-
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Cadastrar Liderança';
-        });
-
-        // Donation Form
-        document.getElementById('donation-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!window.dataSdk) return;
-
-            if (currentRecordCount >= 999) {
-                showMessage('donation-message', 'Limite de registros atingido. Por favor, entre em contato conosco.', 'error');
-                return;
-            }
-
-            const submitBtn = document.getElementById('donation-submit');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Processando...';
-
-            const formData = {
-                id: Date.now().toString(),
-                type: 'donation',
-                name: document.getElementById('donor-name').value,
-                email: document.getElementById('donor-email').value,
-                amount: document.getElementById('donation-amount').value,
-                message: document.getElementById('donation-message').value,
-                created_at: new Date().toISOString()
-            };
-
-            const result = await window.dataSdk.create(formData);
-
-            if (result.isOk) {
-                showMessage('donation-message', 'Obrigado pela sua contribuição! Você receberá instruções por e-mail.', 'success');
-                document.getElementById('donation-form').reset();
-            } else {
-                showMessage('donation-message', 'Erro ao processar contribuição. Tente novamente.', 'error');
-            }
-
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Enviar Contribuição';
-        });
-
-        // Newsletter Form
-        document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!window.dataSdk) return;
-
-            if (currentRecordCount >= 999) {
-                showMessage('newsletter-message', 'Limite de inscrições atingido.', 'error');
-                return;
-            }
-
-            const submitBtn = document.getElementById('newsletter-submit');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Inscrevendo...';
-
-            const formData = {
-                id: Date.now().toString(),
-                type: 'newsletter',
-                email: document.getElementById('newsletter-email').value,
-                created_at: new Date().toISOString()
-            };
-
-            const result = await window.dataSdk.create(formData);
-
-            if (result.isOk) {
-                showMessage('newsletter-message', '✅ Inscrição realizada com sucesso!', 'success');
-                document.getElementById('newsletter-form').reset();
-            } else {
-                showMessage('newsletter-message', '❌ Erro ao inscrever. Tente novamente.', 'error');
-            }
-
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Inscrever';
-        });
-
-        // Contact Form
-        document.getElementById('contact-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!window.dataSdk) return;
-
-            if (currentRecordCount >= 999) {
-                showMessage('contact-message', 'Limite de mensagens atingido. Por favor, envie e-mail para contato@dniportugal.org', 'error');
-                return;
-            }
-
-            const submitBtn = document.getElementById('contact-submit');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            const formData = {
-                id: Date.now().toString(),
-                type: 'contact',
-                name: document.getElementById('contact-name').value,
-                email: document.getElementById('contact-email').value,
-                phone: document.getElementById('contact-phone').value,
-                message: document.getElementById('contact-subject').value + ' - ' + document.getElementById('contact-text').value,
-                created_at: new Date().toISOString()
-            };
-
-            const result = await window.dataSdk.create(formData);
-
-            if (result.isOk) {
-                showMessage('contact-message', 'Mensagem enviada com sucesso! Responderemos em breve.', 'success');
-                document.getElementById('contact-form').reset();
-            } else {
-                showMessage('contact-message', 'Erro ao enviar mensagem. Tente novamente.', 'error');
-            }
-
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Enviar Mensagem';
-        });
-
-        function showMessage(elementId, message, type) {
-            const messageDiv = document.getElementById(elementId);
-            messageDiv.innerHTML = `<div class="${type}-message">${message}</div>`;
-            setTimeout(() => {
-                messageDiv.innerHTML = '';
-            }, 5000);
-        }
-
-        function downloadMaterial(materialName) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'success-message';
-            messageDiv.textContent = `Download de "${materialName}" iniciado! (Funcionalidade demonstrativa)`;
-            messageDiv.style.position = 'fixed';
-            messageDiv.style.top = '100px';
-            messageDiv.style.left = '50%';
-            messageDiv.style.transform = 'translateX(-50%)';
-            messageDiv.style.zIndex = '9999';
-            messageDiv.style.minWidth = '300px';
-            document.body.appendChild(messageDiv);
-            setTimeout(() => messageDiv.remove(), 3000);
-        }
-
-        async function registerEvent(eventName) {
-            if (!window.dataSdk) return;
-
-            if (currentRecordCount >= 999) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = 'error-message';
-                messageDiv.textContent = 'Limite de inscrições atingido. Entre em contato conosco.';
-                messageDiv.style.position = 'fixed';
-                messageDiv.style.top = '100px';
-                messageDiv.style.left = '50%';
-                messageDiv.style.transform = 'translateX(-50%)';
-                messageDiv.style.zIndex = '9999';
-                messageDiv.style.minWidth = '300px';
-                document.body.appendChild(messageDiv);
-                setTimeout(() => messageDiv.remove(), 3000);
-                return;
-            }
-
-            const name = window.prompt('Digite seu nome completo:');
-            if (!name) return;
-
-            const email = window.prompt('Digite seu e-mail:');
-            if (!email) return;
-
-            const formData = {
-                id: Date.now().toString(),
-                type: 'event',
-                name: name,
-                email: email,
-                event_name: eventName,
-                created_at: new Date().toISOString()
-            };
-
-            const result = await window.dataSdk.create(formData);
-
-            const messageDiv = document.createElement('div');
-            messageDiv.className = result.isOk ? 'success-message' : 'error-message';
-            messageDiv.textContent = result.isOk 
-                ? `Inscrição para "${eventName}" realizada com sucesso!` 
-                : 'Erro ao realizar inscrição. Tente novamente.';
-            messageDiv.style.position = 'fixed';
-            messageDiv.style.top = '100px';
-            messageDiv.style.left = '50%';
-            messageDiv.style.transform = 'translateX(-50%)';
-            messageDiv.style.zIndex = '9999';
-            messageDiv.style.minWidth = '300px';
-            document.body.appendChild(messageDiv);
-            setTimeout(() => messageDiv.remove(), 3000);
-        }
 
         initializeApp();
     </script>
