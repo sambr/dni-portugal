@@ -676,6 +676,11 @@
             animation: marquee-scroll 60s linear infinite;
         }
 
+        .marquee-track picture {
+            display: block;
+            flex-shrink: 0;
+        }
+
         .marquee-track img {
             height: 360px;
             width: auto;
@@ -896,10 +901,10 @@
     <p class="marias-texto">Momentos como esse tornam a caminhada mais leve e nos lembram de que fomos chamadas por Ele e que tudo o que fazemos é para Ele!</p>
     <div class="marquee" aria-label="Fotos do Congresso Ibérico de Mulheres">
      <div class="marquee-track">
-      <img src="marias/congresso-2026/carrossel-original.png" alt="Fotos do Congresso Ibérico de Mulheres" width="7560" height="1350" loading="lazy">
-      <img src="marias/congresso-2026/carrossel-original.png" alt="" aria-hidden="true" width="7560" height="1350" loading="lazy">
-      <img src="marias/congresso-2026/carrossel-original.png" alt="" aria-hidden="true" width="7560" height="1350" loading="lazy">
-      <img src="marias/congresso-2026/carrossel-original.png" alt="" aria-hidden="true" width="7560" height="1350" loading="lazy">
+      <picture><source srcset="marias/congresso-2026/carrossel.webp" type="image/webp"><img src="marias/congresso-2026/carrossel.jpg" alt="Fotos do Congresso Ibérico de Mulheres" width="4032" height="720" loading="lazy"></picture>
+      <picture><source srcset="marias/congresso-2026/carrossel.webp" type="image/webp"><img src="marias/congresso-2026/carrossel.jpg" alt="" aria-hidden="true" width="4032" height="720" loading="lazy"></picture>
+      <picture><source srcset="marias/congresso-2026/carrossel.webp" type="image/webp"><img src="marias/congresso-2026/carrossel.jpg" alt="" aria-hidden="true" width="4032" height="720" loading="lazy"></picture>
+      <picture><source srcset="marias/congresso-2026/carrossel.webp" type="image/webp"><img src="marias/congresso-2026/carrossel.jpg" alt="" aria-hidden="true" width="4032" height="720" loading="lazy"></picture>
      </div>
     </div>
    </div>
